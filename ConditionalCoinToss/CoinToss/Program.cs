@@ -18,7 +18,7 @@ namespace CoinToss
         public static int actualNum;
         
         
-        public static void CoinSelector()
+        public static void CoinSelector() //Method created with all the logic neeeded to assign a random coin side. Can be called in main() for simplification. 
         {
             var rand = new Random();
             randNum = rand.Next(1, 3);
@@ -61,6 +61,7 @@ namespace CoinToss
         }
         public static void Main(string[] args)
         {
+            const string devName = "Keishon Rose";
             /*This code allows main to execute the coin side selector method and give the option to play again
              * back to the user if they would like to. If they don't say yes, the program will stop. I did it this way 
              * instead of calling main() again to avoid an infinite loop of restarting the game.
@@ -68,6 +69,7 @@ namespace CoinToss
             do
             {
                 CoinSelector();
+                Console.WriteLine("Thank you for playing with the creator of this program, " + devName + "!");
                 Console.WriteLine("Would you like to play again?");
             }
             while (Console.ReadLine().ToLower() == "yes");
